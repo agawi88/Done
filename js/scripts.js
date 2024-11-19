@@ -21,8 +21,9 @@ function newItem() {
         li.toggleClass("strike");
     });
 
- //3(i). Adding the delete button "X": 
-   // let crossOutButton = $(li).add(<crossOutButton> 'X' </crossOutButton>);
+    //3(i). Adding the delete button "X":
+    //why isn't the code below working? I found "it" on https://api.jquery.com/add/#add-selector
+    // let crossOutButton = $(li).add(<crossOutButton> 'X' </crossOutButton>);
     let crossOutButton = $('<crossOutButton></crossOutButton>');
     crossOutButton.append(document.createTextNode('X'));
     li.append(crossOutButton);
@@ -35,5 +36,10 @@ function newItem() {
  //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
     
  // 4. Reordering the items: 
-   $('#list').sortable();
+    $('#list').sortable();
+    
+    /* window.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && 
+    }
+  }); */
 }
