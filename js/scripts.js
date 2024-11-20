@@ -36,10 +36,16 @@ function newItem() {
  //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
     
  // 4. Reordering the items: 
-    $('#list').sortable();
-    
-    /* window.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && 
-    }
-  }); */
+  $('#list').sortable();
+  
+ // 5. Clear input after adding item
+  $("#input").val(""); 
 }
+
+  //6. Add Enter key functionality
+$("#input").on("keydown", function (event) {
+if (event.key === "Enter") {
+event.preventDefault(); // Prevent form submission or unwanted behavior
+newItem();
+}
+});
